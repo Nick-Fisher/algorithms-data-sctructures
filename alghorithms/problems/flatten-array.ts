@@ -19,7 +19,7 @@ let nestedList = [[1,1],2,[1,[2, 1]]];
 //     return flattenArray;
 // }
 
-const flatten = (arr) => {
+export const flatten = (arr: Array<any>): Array<any> => {
     let flattenArray = [];
     while (arr.length) {
         const arrayElement = arr.shift();
@@ -30,7 +30,7 @@ const flatten = (arr) => {
 
         flattenArray.push(arrayElement)
     }
-
+    console.log('flatten array', flattenArray)
     return flattenArray;
 }
 
