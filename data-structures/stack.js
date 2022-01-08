@@ -29,10 +29,26 @@ class Stack {
     }
 }
 
-
 const stack = new Stack();
 
-stack.add(5)
-stack.add(3)
-stack.pop();
-stack.showStack();
+// class Stack {
+//     constructor() {
+//         this.last = null;
+//     }
+
+//     push(item) {
+//         const prev = this.last;
+//         const element = {prev, item};
+//         this.last = element;
+//     }
+
+//     pop() {
+//         const element = this.last;
+//         if (!element) {
+//             return null;
+//         }
+
+//         this.last = element.prev;
+//         return element.item;
+//     }
+// }
