@@ -9,25 +9,27 @@ const operations = {
 }
 
 export const polishNotation = (str: string) => {
-    const elements: Array<any> = str.trim().split(' ');
+    const elements: Array<any> = str.split(' ');
     const stack = [];
-    console.log('elems', elements)
+    
     while (elements.length) {
         const element: any = elements.pop();
+        const numberedElement = Number(element);
 
-        if (!isNaN(Number(element))) {
-            stack.push(element);
+        if (!isNaN(numberedElement)) {
+            stack.push(numberedElement);
             continue;
         }
 
-        const firstOperand = stack.pop();
-        const secondOperand = stack.pop();
-        // @ts-ignore
-        console.log(operations[element], element, typeof element);
+        const firstOperand: any = stack.pop();
+        const secondOperand: any = stack.pop();
+
         // @ts-ignore
         const result = operations[element](firstOperand, secondOperand);
-        console.log(result)
+        stack.push(result);
     }
+
+    return stack[0];
 }
 
-polishNotation(' * + 2 2 3 ')
+polishNotation('* + 2 2 3'); // 12
