@@ -38,6 +38,39 @@ class BinaryTree {
             }
         }
     }
+
+    preOrder(node, cb) {
+        if (!node) {
+            return;
+        }
+
+        if (cb) {
+            cb(node);
+        }
+
+        this.preOrder(node.left, cb);
+        this.preOrder(node.right, cb);
+    }
+
+    inOrder(node, cb) {
+
+    }
+
+    postOrder(node, cb) {
+
+    }
+
+    traverseTFS(cb, method) {
+        if (method === 'preOrder') {
+            return this.preOrder(tihs.root, cb);
+        }
+
+        if (method === 'inOrder') {
+            return this.inOrder(this.root, cb);
+        }
+
+        return this.postOrder(this.root, cb);
+    }
 }
 
 const tree = new BinaryTree();
