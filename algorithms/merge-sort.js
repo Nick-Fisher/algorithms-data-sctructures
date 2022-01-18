@@ -1,4 +1,4 @@
-const mergeArrays = (leftArr, rightArr) => {
+export const mergeArrays = (leftArr, rightArr) => {
   const result = [];
   let leftIndex = 0;
   let rightIndex = 0;
