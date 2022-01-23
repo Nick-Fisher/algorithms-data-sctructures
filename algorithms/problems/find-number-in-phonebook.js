@@ -1,9 +1,3 @@
-const phoneBook = [
-  { name: "Alex Bowman", number: "48-2002" },
-  { name: "Aric Almirola", number: "10-1001" },
-  { name: "Bubba Wallace", number: "23-1111" },
-];
-
 const findNumberByName = (phoneBook, name) => {
   if (phoneBook.length === 0) return null;
   let start = 0,
@@ -23,6 +17,6 @@ const findNumberByName = (phoneBook, name) => {
   return null;
 };
 
-export default findNumberByName;
-
-findNumberByName(phoneBook, "Alex Bowman"); // '48-2002'
+export {
+  findNumberByName,
+}
