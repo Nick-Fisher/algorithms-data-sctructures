@@ -1,11 +1,8 @@
 /**
  * Input: nestedList = [[1,1],2,[1,1]]
  * Output: [1,1,2,1,1]
- * 
+ *
  */
-
-
-let nestedList = [[1,1],2,[1,[2, 1]]];
 
 // const flatten = (arr) => {
 //     let flattenArray = [];
@@ -20,18 +17,15 @@ let nestedList = [[1,1],2,[1,[2, 1]]];
 // }
 
 export const flatten = (arr: Array<any>): Array<any> => {
-    let flattenArray = [];
-    while (arr.length) {
-        const arrayElement = arr.shift();
-        if (Array.isArray(arrayElement)) {
-            arr.unshift(...arrayElement)
-            continue;
-        }
-
-        flattenArray.push(arrayElement)
+  let flattenArray = [];
+  while (arr.length) {
+    const arrayElement = arr.shift();
+    if (Array.isArray(arrayElement)) {
+      arr.unshift(...arrayElement);
+      continue;
     }
-    console.log('flatten array', flattenArray)
-    return flattenArray;
-}
 
-flatten(nestedList);
+    flattenArray.push(arrayElement);
+  }
+  return flattenArray;
+};
