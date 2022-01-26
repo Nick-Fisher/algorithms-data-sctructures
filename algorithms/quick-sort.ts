@@ -4,12 +4,12 @@ export const quickSort = (arr: Array<number>): Array<number> => {
         return arr;
     }
 
-    const pivot = arr[0];
+    const pivot = arr[Math.trunc(arr.length / 2)];
 
-    const less = arr.slice(1).filter(item => item <= pivot);
-    const greater = arr.slice(1).filter(item => item > pivot);
+    const less = arr.filter(item => item < pivot);
+    const greater = arr.filter(item => item > pivot);
 
-    return quickSort(less).concat([pivot], quickSort(greater));
+    return [...quickSort(less), pivot, ...quickSort(greater)];
 }
 
 
